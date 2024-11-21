@@ -2,14 +2,14 @@
 <?php include 'inc/sidebar.php';?>
 <div class="grid_10">
     <div class="box round first grid">
-        <h2>Add New Product</h2>
+        <h2>Thêm sản phẩm mới</h2>
         <div class="block">               
          <form action="" method="post" enctype="multipart/form-data">
             <table class="form">
                
                 <tr>
                     <td>
-                        <label>Name</label>
+                        <label>Tên</label>
                     </td>
                     <td>
                         <input type="text" placeholder="Enter Product Name..." class="medium" />
@@ -17,7 +17,7 @@
                 </tr>
 				<tr>
                     <td>
-                        <label>Category</label>
+                        <label>Danh mục</label>
                     </td>
                     <td>
                         <select id="select" name="select">
@@ -44,7 +44,7 @@
 				
 				 <tr>
                     <td style="vertical-align: top; padding-top: 9px;">
-                        <label>Description</label>
+                        <label>Mô tả</label>
                     </td>
                     <td>
                         <textarea class="tinymce"></textarea>
@@ -52,7 +52,7 @@
                 </tr>
 				<tr>
                     <td>
-                        <label>Price</label>
+                        <label>Giá</label>
                     </td>
                     <td>
                         <input type="text" placeholder="Enter Price..." class="medium" />
@@ -61,7 +61,7 @@
             
                 <tr>
                     <td>
-                        <label>Upload Image</label>
+                        <label>Thêm hình ảnh</label>
                     </td>
                     <td>
                         <input type="file" />
@@ -70,7 +70,7 @@
 				
 				<tr>
                     <td>
-                        <label>Product Type</label>
+                        <label>Loại sản phẩm</label>
                     </td>
                     <td>
                         <select id="select" name="select">
@@ -84,7 +84,7 @@
 				<tr>
                     <td></td>
                     <td>
-                        <input type="submit" name="submit" Value="Save" />
+                        <input type="submit" name="submit" Value="Lưu" />
                     </td>
                 </tr>
             </table>

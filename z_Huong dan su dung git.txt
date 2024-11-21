@@ -1,0 +1,10 @@
+cai dat remote cho git: git remote add origin https://github.com/TranNgocDuong-bodoiz/new-web.git
+
+de push code le du an:
+- git add . 
+- git commit -m "update"
+- git push
+
+de pull code ve:
+- git pull
+

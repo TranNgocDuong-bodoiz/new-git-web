@@ -28,7 +28,6 @@ class Database{
             return false;
         }
     }
-
     public function insert($query){
         $insert_row = $this->link->query($query) or die($this->link->error . __LINE__);
         if($insert_row){
@@ -52,6 +51,16 @@ class Database{
         if($delete_row){
             return true;
         } else {
+            return false;
+        }
+    }
+    public function number($query){
+        $number_row = $this->link->query($query) or die($this->link->error.__LINE__);
+        $num = $number_row->num_rows;
+        if($num > 0){
+            return $num;
+        }
+        else{
             return false;
         }
     }

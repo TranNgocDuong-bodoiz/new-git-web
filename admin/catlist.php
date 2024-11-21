@@ -1,70 +1,46 @@
 ﻿<?php include 'inc/header.php';?>
 <?php include 'inc/sidebar.php';?>
+<?php include '../classes/category.php';?>
+<?php
+$cate = new Category();
+$category_row = $cate->getAllCategory();
+$category_num = $cate->getNumberOfCategory();
+?>
         <div class="grid_10">
             <div class="box round first grid">
-                <h2>Category List</h2>
+                <h2>Danh sách danh mục</h2>
                 <div class="block">        
                     <table class="data display datatable" id="example">
 					<thead>
 						<tr>
-							<th>Serial No.</th>
-							<th>Category Name</th>
-							<th>Action</th>
+							<th>Mã danh mục</th>
+							<th>Tên danh mục</th>
+							<th>Hành động</th>
 						</tr>
 					</thead>
 					<tbody>
+						<?php
+						$i = 0;
+						if($category_num > 0){?>
+						<?php while( $row = $category_row->fetch_assoc()) { $i++; ?>
 						<tr class="odd gradeX">
-							<td>01</td>
-							<td>Internet</td>
-							<td><a href="">Edit</a> || <a href="">Delete</a></td>
+							<td style="text-align: center;"><?php echo $i ?></td>
+							<td style="text-align: center;"><?php echo  $row['category_Name']; ?></td>
+							<td style="text-align: center;"><a href="catedit.php?id=<?php echo $row['id'] ?>">Sửa</a> || <a href="catdelete.php?id=<?php echo $row['id']; ?>" onclick="return confirm('do you want to delete')" >Xóa</a></td>
 						</tr>
-						<tr class="even gradeC">
-							<td>02</td>
-							<td>Explorer </td>
-							<td><a href="">Edit</a> || <a href="">Delete</a></td>
+						<?php } ?>
+					    <?php }
+						else{?>
+                        <tr>
+							<td colspan="3">Không có danh mục nào</td>
 						</tr>
-						<tr class="odd gradeX">
-							<td>03</td>
-							<td>Internet</td>
-							<td><a href="">Edit</a> || <a href="">Delete</a></td>
-						</tr>
-						<tr class="even gradeC">
-							<td>04</td>
-							<td>Explorer </td>
-							<td><a href="">Edit</a> || <a href="">Delete</a></td>
-						</tr>
-							<tr class="odd gradeX">
-							<td>05</td>
-							<td>Internet</td>
-							<td><a href="">Edit</a> || <a href="">Delete</a></td>
-						</tr>
-						<tr class="even gradeC">
-							<td>06</td>
-							<td>Explorer </td>
-							<td><a href="">Edit</a> || <a href="">Delete</a></td>
-						</tr>
-						<tr class="odd gradeX">
-							<td>07</td>
-							<td>Internet</td>
-							<td><a href="">Edit</a> || <a href="">Delete</a></td>
-						</tr>
-						<tr class="even gradeC">
-							<td>08</td>
-							<td>Explorer </td>
-							<td><a href="">Edit</a> || <a href="">Delete</a></td>
-						</tr>
+						<?php
+						}
+						?>
 					</tbody>
 				</table>
                </div>
             </div>
         </div>
-<script type="text/javascript">
-	$(document).ready(function () {
-	    setupLeftMenu();
-
-	    $('.datatable').dataTable();
-	    setSidebarHeight();
-	});
-</script>
 <?php include 'inc/footer.php';?>
 
